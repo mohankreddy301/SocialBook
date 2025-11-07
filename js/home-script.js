@@ -1,7 +1,7 @@
 import { shortcuts, importantLinks, events, onlineData } from "./data.js";
+import { displayStories } from "./main-content.js";
 
 let leftSidebar = document.getElementById("left-sidebar");
-
 let impLinks = leftSidebar.querySelector(".imp-link");
 let shortcutsLinks = leftSidebar.querySelector(".shortcut-links");
 
@@ -9,6 +9,8 @@ addingImportantLinks();
 addingShortcuts();
 addEvents();
 addOnlineList();
+displayStories();
+
 function addingImportantLinks() {
   importantLinks.forEach((item) => {
     let impLinksInnerText = impLinks.innerHTML;
@@ -59,6 +61,7 @@ function addEvents() {
     div.innerHTML = eventInnerHTML;
     rightSidebar.append(div);
   });
+
   rightSidebar.appendChild(addSideBars("Advertisement", "Close"));
   let img = document.createElement("img");
   img.src = "/images/advertisement.png";
@@ -75,7 +78,7 @@ function addOnlineList() {
 
     onlineList.innerHTML = `
         <div class="online">
-          <img src="/images/${item.image}" alt="">
+          <img src="/assests/members/${item.image}" alt="">
         </div>
         <p>${item.title}</p>`;
 

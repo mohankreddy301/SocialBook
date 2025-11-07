@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="home-style.css" />
+  <link rel="stylesheet" href="./css/home-style.css" />
+  <link rel="stylesheet" href="./css/main-content.css" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=location_on" />
   <title>SocialBook</title>
@@ -27,7 +28,7 @@
         <input type="text" placeholder="search" />
       </div>
       <div class="nav-user-icon online">
-        <img src="/images/profile-pic.png" />
+        <img src="/assests/images/status-6.jpg" />
       </div>
     </div>
   </nav>
@@ -36,26 +37,38 @@
   <div class="container">
     <!--------- Left side bar content  -------->
     <div class="left-sidebar" id="left-sidebar">
-      <div class="imp-link">
-      </div>
+      <div class="imp-link"></div>
       <div class="shortcut-links">
         <p>Your Shortcuts</p>
       </div>
     </div>
+
     <!-- Main content -->
     <div class="main-content">
+      <div class="story-gallery"></div>
+
+      <div class="write-post-container">
+        <div class="user-profile">
+          <img src="/assests/images/status-6.jpg" alt="" />
+          <div>
+            <p>John-Edward</p>
+            <p id="public">Public</p>
+          </div>
+        </div>
+        <div class="post-input-container">
+          <textarea rows="3" placeholder="What's on Your mind?">
+              </textarea>
+        </div>
+
+      </div>
     </div>
 
     <!-- right side bar content -->
-    <div class="right-sidebar">
-
-    </div>
-
-    
+    <div class="right-sidebar"></div>
   </div>
-  <script type="module" src="data.js"></script>
-  <script type="module" src="home-script.js"></script>
 
+  <script type="module" src="./js/data.js"></script>
+  <script type="module" src="./js/home-script.js"></script>
 </body>
 
 </html>
