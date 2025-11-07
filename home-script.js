@@ -34,8 +34,9 @@ function addingShortcuts() {
 }
 
 function addEvents() {
-  let event = document.querySelector(".right-sidebar");
+  let rightSidebar = document.querySelector(".right-sidebar");
   let sidebartitle = document.querySelector(".events-bar");
+  rightSidebar.append(addSideBars("Events", "See All"));
   events.forEach((item) => {
     let div = document.createElement("div");
     div.className = "event";
@@ -56,13 +57,18 @@ function addEvents() {
          </div>
         `;
     div.innerHTML = eventInnerHTML;
-    event.insertBefore(div, sidebartitle);
+    rightSidebar.append(div);
   });
+  rightSidebar.appendChild(addSideBars("Advertisement", "Close"));
+  let img = document.createElement("img");
+  img.src = "/images/advertisement.png";
+  img.className = "add-banner";
+  rightSidebar.appendChild(img);
 }
 
 function addOnlineList() {
   let event = document.querySelector(".right-sidebar");
-
+  event.appendChild(addSideBars("Conversation", "Hide"));
   onlineData.forEach((item) => {
     let onlineList = document.createElement("div");
     onlineList.className = "online-list";
@@ -72,7 +78,15 @@ function addOnlineList() {
           <img src="/images/${item.image}" alt="">
         </div>
         <p>${item.title}</p>`;
-        
+
     event.appendChild(onlineList);
   });
+}
+
+function addSideBars(title, link) {
+  let div = document.createElement("div");
+  div.className = "sidebar-title";
+  div.innerHTML = `<h4>${title}</h4>
+        <a href="">${link}</a>`;
+  return div;
 }
