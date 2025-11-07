@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="home-style.css" />
-  <script src="home-script.js" defer></script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=location_on" />
   <title>SocialBook</title>
 </head>
 
@@ -33,35 +34,41 @@
 
   <!-- Container -->
   <div class="container">
-
     <!--------- Left side bar content  -------->
-    <div class="left-sidebar">
+    <div class="left-sidebar" id="left-sidebar">
       <div class="imp-link">
-        <a href="#"><img src="/images/news.png"> Latest News</a>
-        <a href="#"><img src="/images/friends.png"> Friends</a>
-        <a href="#"><img src="/images/marketplace.png"> Market Place</a>
-        <a href="#"><img src="/images/group.png">Groups</a>
-        <a href="#"><img src="/images/watch.png">Watch</a>
-
       </div>
-
-
+      <div class="shortcut-links">
+        <p>Your Shortcuts</p>
+      </div>
     </div>
-
-
     <!-- Main content -->
     <div class="main-content">
-      
     </div>
 
     <!-- right side bar content -->
     <div class="right-sidebar">
+
+      <div class="sidebar-title " id="events-header">
+        <h4>Events</h4>
+        <a href="#">See All</a>
+      </div>
+
+      <div class="sidebar-title events-bar">
+        <h4>Advertisement</h4>
+        <a href="">Close</a>
+      </div>
+
+      <img src="/images/advertisement.png" class="add-banner">
+      <div class="sidebar-title">
+        <h4>Conversation</h4>
+        <a href="">Hide</a>
+      </div>
+
     </div>
-
-
-
-
   </div>
+  <script type="module" src="data.js"></script>
+  <script type="module" src="home-script.js"></script>
 
 </body>
 
