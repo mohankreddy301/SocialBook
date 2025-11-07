@@ -1,5 +1,5 @@
 import { shortcuts, importantLinks, events, onlineData } from "./data.js";
-import { displayStories } from "./main-content.js";
+import { displayStories,displayPosts } from "./main-content.js";
 
 let leftSidebar = document.getElementById("left-sidebar");
 let impLinks = leftSidebar.querySelector(".imp-link");
@@ -10,7 +10,7 @@ addingShortcuts();
 addEvents();
 addOnlineList();
 displayStories();
-
+displayPosts();
 function addingImportantLinks() {
   importantLinks.forEach((item) => {
     let impLinksInnerText = impLinks.innerHTML;

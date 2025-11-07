@@ -1,4 +1,4 @@
-import { stories } from "./data.js";
+import { stories, socailPosts, moreInstaPosts } from "./data.js";
 
 export function displayStories() {
   let storyGallery = document.querySelector(".story-gallery");
@@ -24,4 +24,57 @@ export function displayStories() {
     div.appendChild(title);
     storyGallery.appendChild(div);
   });
+}
+
+export function displayPosts() {
+  let posts = [...socailPosts,...moreInstaPosts, ];
+  let writePostContainer = document.querySelector('.main-content');
+
+if(! writePostContainer) return;
+
+ posts.forEach((item) => {
+const postContainer = document.createElement('div');
+  postContainer.className = 'post-container';
+
+  const tempImage = new Image()
+  tempImage.src = item.imageLink;
+  let hashtags = "";
+         item.hashtags.forEach((value) => {
+          hashtags += `<a href="#" style="text-decoration: none;">${value}</a>`;
+         });
+    hashtags  = `${item.description} + ${hashtags}`;
+
+  let postText = `
+        <div class="user-profile">
+          <img src="${item.avatarLink}" alt="" />
+          <div>
+            <p>${item.authorName}</p>
+            <span>${item.dateAdded}</span>
+          </div>
+        </div>
+         <p class = "post-description">${hashtags}</p>
+         <img src="${item.imageLink}" alt="" class ="post-image"/>`;
+         
+
+        
+
+  postContainer.innerHTML = postText;
+  writePostContainer.appendChild(postContainer);
+ });
+
+}
+
+
+
+export function addUserProfile(profileImg,name,postDate) {
+  const userProfile = document.createElement('div');
+  userProfile.className = 'user-profile';
+let profile = `<img src="/assests/images/${profileImg}"/>
+          <div>
+            <p>${name}</p>
+            <span>${postDate}</span>
+          </div>`;
+          userProfile.innerHTML = profile;
+     return userProfile;     
+
 }

@@ -121,6 +121,7 @@ nav {
 
 .main-content {
   flex-basis: 45%;
+  margin: 10px;
 }
 
 .imp-link a {
